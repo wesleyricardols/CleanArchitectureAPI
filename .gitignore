@@ -1,0 +1,15 @@
+# .NET Build artifacts
+bin/
+obj/
+
+# Rider project settings
+.idea/
+*.suo
+*.user
+*.cache
+*.log
+*.vs
+
+# Environment variables
+.env
+appsettings.Development.json
