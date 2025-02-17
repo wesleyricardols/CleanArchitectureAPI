@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: minha_api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=db;Database=CleanArchitectureDB;User Id=localuser;Password=Root2025@;TrustServerCertificate=True;
+  
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: meu_sql_server
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "Root2025@"
+      ACCEPT_EULA: "Y"
