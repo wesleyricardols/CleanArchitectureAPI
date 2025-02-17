@@ -26,7 +26,7 @@ public class ProductsController(IProductManager manager) : ControllerBase
     public async Task<IActionResult> Update(Guid id, [FromBody] ProductDto dto)
     {
         await manager.UpdateProductAsync(id, dto);
-        return Ok("sucesso");
+        return Ok();
     }
 
     [HttpDelete("{id}")]
